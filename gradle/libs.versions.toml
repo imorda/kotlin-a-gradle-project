@@ -15,6 +15,7 @@ mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 
 [plugins]
 
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 ktlint-integration = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint-integration" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 

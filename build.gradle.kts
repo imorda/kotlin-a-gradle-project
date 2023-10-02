@@ -9,7 +9,7 @@ repositories {
 }
 
 plugins {
-    kotlin("jvm") version libs.versions.kotlin
+    alias(libs.plugins.kotlin)
     alias(libs.plugins.ktlint.integration)
     alias(libs.plugins.detekt)
 }
@@ -34,9 +34,9 @@ tasks.withType<DetektCreateBaselineTask>().configureEach {
 
 detekt {
     buildUponDefaultConfig = true // preconfigure defaults
-    config.setFrom("$projectDir/detekt.yml") // point to your custom config defining rules to run, overwriting default behavior
+    config.setFrom(rootProject.projectDir.path + "/detekt.yml") // point to your custom config defining rules to run, overwriting default behavior
 }
 
-configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+ktlint {
     version.set(libs.versions.ktlint.plugin)
 }
